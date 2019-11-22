@@ -1,4 +1,4 @@
-require_relative('../db/sqlrunner.rb')
+require_relative('../db/sqlrunner')
 
 class Customer
 
