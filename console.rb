@@ -7,21 +7,25 @@ customer1 = Customer.new({
   'name' => 'Brendan',
   'funds' => 33
   })
+customer1.save()
 
 customer2 = Customer.new({
   'name' => 'Emma',
   'funds' => 30
   })
+customer2.save()
 
 customer3 = Customer.new({
   'name' => 'Debbie',
   'funds' => 24
   })
+customer3.save()
 
 customer4 = Customer.new({
   'name' => 'Andrew',
   'funds' => 37
   })
+customer4.save()
 
 film1 = Film.new({
   'title' => 'Lord of Ruby: The Fellowship of the Clan',

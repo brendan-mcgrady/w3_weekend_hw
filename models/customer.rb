@@ -1,4 +1,4 @@
-require('PG')
+require_relative('../db/sqlrunner.rb')
 
 class Customer
 
@@ -9,6 +9,13 @@ class Customer
     @id = info['id'].to_i() if info['id']
     @name = info['name']
     @funds = info['funds'].to_i()
+  end
+
+  def save()
+    sql = 'INSERT INTO customers (name, funds) VALUES ($1, $2) RETURNING id;'
+    values = [@name, @funds]
+    customer = SqlRunner.run(sql, values).first()
+    @id = customer['id'].to_i()
   end
 
 end
