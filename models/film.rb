@@ -18,4 +18,15 @@ class Film
     @id = film['id'].to_i()
   end
 
+  def self.all()
+    sql = 'SELECT * FROM films;'
+    film_info = SqlRunner.run(sql)
+    return film_info.map{ |film| Film.new(film) }
+  end
+
+  # def self.delete_all()
+  #   sql = 'SELECT * FROM films;'
+  #   SqlRunner.run(sql)
+  # end
+
 end
